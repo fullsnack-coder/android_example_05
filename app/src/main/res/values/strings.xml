@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Garcia_Manuel_ejercicio01</string>
+    <string name="tv_dni">DNI: 00000000</string>
+    <string name="tv_cliente">Benitez Flores, Jose Armando</string>
+    <string name="btn_acciones">Acciones</string>
+    <string name="btn_editar_cliente">Editar Cliente</string>
+    <string name="btn_solicitar_prestamo">Solicitar Prestamo</string>
+    <string name="btn_registrar_pagos">Registrar Pagos</string>
+    <string name="titulo_editar">Editar Cliente</string>
+    <string name="btn_guardar_editar">Guardar</string>
+    <string name="lbl_nombres">Nombres:</string>
+    <string name="input_nombres_hint">Ingrese sus nombres</string>
+    <string name="lbl_apellidos">Apellidos:</string>
+    <string name="input_apellidos_hint">Ingrese sus apellidos</string>
+    <string name="lbl_dni">DNI:</string>
+    <string name="input_dni_hint">Ingrese su DNI</string>
+    <string name="lbl_linea_credito">Linea de credito:</string>
+    <string name="input_linea_hint">Ingrese el monto de la linea de credito</string>
+    <string name="btn_editar_cancelar">Cancelar</string>
+</resources>
