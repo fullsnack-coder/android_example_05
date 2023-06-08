@@ -14,11 +14,88 @@
         android:layout_height="match_parent">
         <TextView
             android:textSize="@dimen/text_heading"
-            android:text="Solicita tu Prestamo"
+            android:text="Tu Prestamo"
             android:textAlignment="center"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="20dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_caption"
+                    android:text="Monto del Pedido:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/input_monto_prestamo"
+                    android:textSize="@dimen/text_body"
+                    android:hint="Ingrese el monto del prestamo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_md">
+                <TextView
+                    android:textSize="@dimen/text_caption"
+                    android:textStyle="bold"
+                    android:text="Saldo:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_saldo"
+                    android:textSize="@dimen/text_heading"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="20dp"
+                    android:text="---"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/btn_actualiza_prestamo"
+                    android:text="Actualizar prestamo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_md"/>
+                <TextView
+                    android:text="Lista de Pagos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:text="Aqui se van a listar los pagos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <Button
+                            android:text="Registrar Pago"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
