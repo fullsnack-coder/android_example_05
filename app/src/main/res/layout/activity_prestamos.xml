@@ -77,11 +77,23 @@
                         android:text="Prestamo #1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/tv_monto_prestamo_1"
-                        android:text="Monto: 0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monto:"
+                            android:layout_marginEnd="@dimen/margin_sm"
+                            />
+                        <TextView
+                            android:id="@+id/tv_monto_prestamo_1"
+                            android:text="0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
                     <TextView
                         android:id="@+id/tv_estado_prestamo_1"
                         android:background="@color/black"
@@ -119,11 +131,22 @@
                         android:text="Prestamo #2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/tv_monto_prestamo_2"
-                        android:text="Monto: 0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monto:"
+                            android:layout_marginEnd="@dimen/margin_sm"
+                            />
+                        <TextView
+                            android:id="@+id/tv_monto_prestamo_2"
+                            android:text="0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/tv_estado_prestamo_2"
                         android:background="@color/black"
@@ -162,11 +185,22 @@
                         android:text="Prestamo #3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/tv_monto_prestamo_3"
-                        android:text="Monto: 0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monto:"
+                            android:layout_marginEnd="@dimen/margin_sm"
+                            />
+                        <TextView
+                            android:id="@+id/tv_monto_prestamo_3"
+                            android:text="0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/tv_estado_prestamo_3"
                         android:background="@color/black"

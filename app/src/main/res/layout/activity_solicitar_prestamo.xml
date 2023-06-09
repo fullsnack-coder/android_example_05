@@ -38,6 +38,7 @@
                     android:id="@+id/input_monto_prestamo"
                     android:textSize="@dimen/text_body"
                     android:hint="Ingrese el monto del prestamo"
+                    android:inputType="phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -63,39 +64,12 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:paddingVertical="20dp"
+            <Button
+                android:id="@+id/btn_actualiza_prestamo"
+                android:text="Actualizar prestamo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <Button
-                    android:id="@+id/btn_actualiza_prestamo"
-                    android:text="Actualizar prestamo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_md"/>
-                <TextView
-                    android:text="Lista de Pagos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <TextView
-                            android:text="Aqui se van a listar los pagos"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                        <Button
-                            android:text="Registrar Pago"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </ScrollView>
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_md"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

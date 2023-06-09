@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.tarea05.myapplication.actividades.AccionesActivity;
 import com.tarea05.myapplication.modelos.Banco;
 import com.tarea05.myapplication.modelos.Cliente;
+import com.tarea05.myapplication.modelos.Pago;
+import com.tarea05.myapplication.modelos.Prestamo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
                 objBundle.putString("apellidos_cliente", selectedCliente.getApellidos());
                 objBundle.putString("linea_credito_cliente", selectedCliente.getLinea_credito());
 
+                objBundle.putSerializable("prestamo_1_cliente", selectedCliente.getPrestamo1());
+                objBundle.putSerializable("prestamo_2_cliente", selectedCliente.getPrestamo2());
+                objBundle.putSerializable("prestamo_3_cliente", selectedCliente.getPrestamo3());
+
                 irAccionesIntent.putExtras(objBundle);
 
                 startActivityForResult(irAccionesIntent, idCliente);
@@ -120,20 +126,75 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             Bundle receivedBundle = data.getExtras();
-            String dniCliente = receivedBundle.getString("dni_cliente");
-            String apellidosCliente = receivedBundle.getString("apellidos_cliente");
-            String nombresCliente = receivedBundle.getString("nombres_cliente");
-            String lineaCreditoCliente = receivedBundle.getString("linea_credito_cliente");
 
-            Log.println(Log.ASSERT, "ac_result:: ", lineaCreditoCliente);
+            if (receivedBundle.getString("dni_cliente") != null) {
+                String dniCliente = receivedBundle.getString("dni_cliente");
+                String apellidosCliente = receivedBundle.getString("apellidos_cliente");
+                String nombresCliente = receivedBundle.getString("nombres_cliente");
+                String lineaCreditoCliente = receivedBundle.getString("linea_credito_cliente");
 
-            objBanco.getCliente(requestCode)
-                    .setApellidos(apellidosCliente)
-                    .setNombres(nombresCliente)
-                    .setDni(dniCliente)
-                    .setLinea_credito(lineaCreditoCliente);
+                objBanco.getCliente(requestCode)
+                        .setApellidos(apellidosCliente)
+                        .setNombres(nombresCliente)
+                        .setDni(dniCliente)
+                        .setLinea_credito(lineaCreditoCliente);
 
-            cargarDatos();
+                cargarDatos();
+            }
+
+            if (receivedBundle.getString("monto_prestamo") != null) {
+                String monto_prestamo = receivedBundle.get("monto_prestamo").toString();
+                String id_prestamo = receivedBundle.get("id_prestamo").toString();
+
+                switch (id_prestamo) {
+                    case "1":
+                        objBanco.getCliente(requestCode).getPrestamo1().setMonto_pedido(
+                                Integer.parseInt(monto_prestamo)
+                        );
+                        break;
+                    case "2":
+                        objBanco.getCliente(requestCode).getPrestamo2().setMonto_pedido(
+                                Integer.parseInt(monto_prestamo)
+                        );
+                        break;
+                    case "3":
+                        objBanco.getCliente(requestCode).getPrestamo3().setMonto_pedido(
+                                Integer.parseInt(monto_prestamo)
+                        );
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (receivedBundle.getString("monto_pago") != null ) {
+                String monto_ingresado = receivedBundle.getString("monto_pago");
+                String prestamo_id = receivedBundle.getString("prestamo_pago");
+                String fecha_pago = receivedBundle.getString("fecha_pago");
+
+                switch (prestamo_id) {
+                    case "1":
+                        objBanco.getCliente(requestCode).getPrestamo1().addPago(new Pago(
+                                Integer.parseInt(monto_ingresado),
+                                fecha_pago
+                        ));
+                        break;
+                    case "2":
+                        objBanco.getCliente(requestCode).getPrestamo2().addPago(new Pago(
+                                Integer.parseInt(monto_ingresado),
+                                fecha_pago
+                        ));
+                        break;
+                    case "3":
+                        objBanco.getCliente(requestCode).getPrestamo3().addPago(new Pago(
+                                Integer.parseInt(monto_ingresado),
+                                fecha_pago
+                        ));
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

@@ -29,6 +29,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <LinearLayout
+                    android:id="@+id/saldo_contenedor"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_md">
+                    <TextView
+                        android:text="Saldo del prestamo:"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_md"
+                        />
+                    <TextView
+                        android:id="@+id/tv_saldo"
+                        android:textSize="@dimen/text_body"
+                        android:text="0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
                     android:id="@+id/monto_contenedor"
                     android:orientation="vertical"
                     android:layout_width="match_parent"

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/money.xml" value="0.164" />
         <entry key="app/src/main/res/layout/activity_acciones.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_crear_prestamo.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_editar.xml" value="0.37604166666666666" />

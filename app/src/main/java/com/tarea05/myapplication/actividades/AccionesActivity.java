@@ -42,11 +42,30 @@ public class AccionesActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            setResult(RESULT_OK, data);
+        if (resultCode == RESULT_OK && data != null) {
             Bundle receivedBundle = data.getExtras();
-            String lineaCreditoCliente = receivedBundle.getString("linea_credito_cliente");
 
+            if (receivedBundle.getString("dni_cliente") != null) {
+                setResult(RESULT_OK, data);
+                finish();
+            }
+
+            if (receivedBundle.getString("monto_prestamo") != null) {
+                setResult(RESULT_OK, data);
+                finish();
+            }
+
+            if (receivedBundle.getString("monto_pago") != null ) {
+                String monto_ingresado = receivedBundle.getString("monto_pago");
+                String prestamo_id = receivedBundle.getString("prestamo_pago");
+                String fecha_pago = receivedBundle.getString("fecha_pago");
+
+                setResult(RESULT_OK, data);
+                finish();
+            }
+
+            if (receivedBundle.getString("linea_credito_cliente") == null) return;
+            String lineaCreditoCliente = receivedBundle.getString("linea_credito_cliente");
             btn_solicitar_prestamo.setEnabled(!lineaCreditoCliente.isEmpty());
 
             if (!lineaCreditoCliente.isEmpty()) {
@@ -76,6 +95,7 @@ public class AccionesActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_registrar_pagos:
                 Intent registrarPagoClienteIntent = new Intent(AccionesActivity.this, RegistrarPagoActivity.class);
+                registrarPagoClienteIntent.putExtras(receivedBundle);
                 startActivityForResult(registrarPagoClienteIntent, receivedBundle.getInt("id_cliente"));
                 break;
             default:

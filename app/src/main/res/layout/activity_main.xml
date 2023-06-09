@@ -12,41 +12,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp">
-        <include
-            android:id="@+id/include_cliente_1"
-            layout="@layout/item_cliente"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_md"
-            />
-        <include
-            android:id="@+id/include_cliente_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/item_cliente"
-            android:layout_marginBottom="@dimen/margin_md"
-            />
-        <include
-            android:id="@+id/include_cliente_3"
-            layout="@layout/item_cliente"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin_xl">
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/money"
+                />
+            <TextView
+                android:layout_marginVertical="@dimen/margin_md"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_body"
+                android:textAlignment="center"
+                android:text="Tu app de banco movil"
+                />
+        </LinearLayout>
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_md"
-            />
-        <include
-            android:id="@+id/include_cliente_4"
-            layout="@layout/item_cliente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_md"
-            />
-        <include
-            android:id="@+id/include_cliente_5"
-            layout="@layout/item_cliente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_md"
-            />
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <include
+                    android:id="@+id/include_cliente_1"
+                    layout="@layout/item_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    />
+                <include
+                    android:id="@+id/include_cliente_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/item_cliente"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    />
+                <include
+                    android:id="@+id/include_cliente_3"
+                    layout="@layout/item_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    />
+                <include
+                    android:id="@+id/include_cliente_4"
+                    layout="@layout/item_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    />
+                <include
+                    android:id="@+id/include_cliente_5"
+                    layout="@layout/item_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
