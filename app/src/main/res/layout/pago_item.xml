@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:backgroundTint="@color/cardview_dark_background"
+    android:layout_marginBottom="@dimen/margin_md">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Monto: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_sm"
+            />
+        <TextView
+            android:id="@+id/tv_monto_pago"
+            android:text="000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Fecha: "
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/margin_sm"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_fecha_pago"
+            android:text="DD/MM/YYY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

@@ -23,6 +23,7 @@ import com.tarea05.myapplication.modelos.Prestamo;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class RegistrarPagoActivity extends AppCompatActivity {
 
@@ -88,9 +89,11 @@ public class RegistrarPagoActivity extends AppCompatActivity {
         tvFechaPago.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Date fecha_actual = new Date();
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(Calendar.YEAR, 1970);
+                calendar.setTimeInMillis(fecha_actual.getTime());
                 long minDate = calendar.getTimeInMillis();
+                long maxDate = calendar.getTimeInMillis();
 
                 int dia = calendar.get(Calendar.DAY_OF_MONTH);
                 int mes = calendar.get(Calendar.MONTH);
@@ -106,6 +109,7 @@ public class RegistrarPagoActivity extends AppCompatActivity {
                 }, dia, mes, anio);
 
                 dialogoFecha.getDatePicker().setMinDate(minDate);
+                dialogoFecha.getDatePicker().setMaxDate(maxDate);
 
                 dialogoFecha.show();
             }

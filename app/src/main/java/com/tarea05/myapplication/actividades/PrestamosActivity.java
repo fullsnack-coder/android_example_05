@@ -122,6 +122,7 @@ public class PrestamosActivity extends AppCompatActivity implements View.OnClick
                 solicitarPrestamoBundle.putString("id_prestamo", "1");
                 solicitarPrestamoBundle.putString("monto_prestamo", tvMontoPrestamo1.getText().toString());
                 solicitarPrestamoBundle.putString("saldo_prestamo", prestamo1.getSaldo() + "");
+                solicitarPrestamoBundle.putSerializable("pagos_prestamo", prestamo1.getPagos());
                 break;
             case R.id.btn_solicitar_prestamo_2:
                 id_prestamo = 2;

@@ -10,15 +10,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.tarea05.myapplication.PagoAdapter;
 import com.tarea05.myapplication.R;
+import com.tarea05.myapplication.modelos.Pago;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class SolicitarPrestamoActivity extends AppCompatActivity {
 
     TextView tv_saldo;
     EditText input_monto_prestamo;
     Button btn_actualiza_prestamo;
+    ListView list_pagos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +35,11 @@ public class SolicitarPrestamoActivity extends AppCompatActivity {
         tv_saldo = findViewById(R.id.tv_saldo);
         input_monto_prestamo = findViewById(R.id.input_monto_prestamo);
         btn_actualiza_prestamo = findViewById(R.id.btn_actualiza_prestamo);
+        list_pagos = findViewById(R.id.lv_pagos);
 
         Bundle receivedBundle = getIntent().getExtras();
         if (receivedBundle == null) return;
+        ArrayList<Pago> pagos_prestamo = (ArrayList<Pago>) receivedBundle.getSerializable("pagos_prestamo");
         String monto_actual_prestamo = receivedBundle.getString("monto_prestamo");
         String saldo_actual_prestamo = receivedBundle.getString("saldo_prestamo");
         String linea_credito_actual = receivedBundle.getString("linea_credito_cliente");
@@ -87,7 +96,11 @@ public class SolicitarPrestamoActivity extends AppCompatActivity {
             }
         });
 
+        Log.d("pagos: ", "la cantidad de pagos es: " + pagos_prestamo.size());
+        PagoAdapter pagoAdapter = new PagoAdapter(this, pagos_prestamo);
+        list_pagos.setAdapter(pagoAdapter);
     }
+
 
 
 }

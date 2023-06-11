@@ -56,10 +56,6 @@ public class AccionesActivity extends AppCompatActivity implements View.OnClickL
             }
 
             if (receivedBundle.getString("monto_pago") != null ) {
-                String monto_ingresado = receivedBundle.getString("monto_pago");
-                String prestamo_id = receivedBundle.getString("prestamo_pago");
-                String fecha_pago = receivedBundle.getString("fecha_pago");
-
                 setResult(RESULT_OK, data);
                 finish();
             }

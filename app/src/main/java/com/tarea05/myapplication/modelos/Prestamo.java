@@ -78,4 +78,12 @@ public class Prestamo implements Serializable {
 
         return this.pagos.size();
     }
+
+    public ArrayList<Pago> getPagos() {
+        return pagos;
+    }
+
+    public void setPagos(ArrayList<Pago> pagos) {
+        this.pagos = pagos;
+    }
 }
